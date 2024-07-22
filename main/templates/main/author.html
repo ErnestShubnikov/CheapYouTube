@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %} 
+
+
+{% block title %} Автор {% endblock%}
+
+{% block content %} <div>
+
+	<h1>Видео автора {{username}}</h1>
+	<div id="videos">
+	{% for el in videos %}
+		
+		<div id="video">
+			<img src="{{ el.preview.url }}" alt="">
+			<a href="{% url 'video' id=el.id %}">{{ el.title}}</a></div>
+	{% endfor %}
+</div>
+</div> {% endblock%}

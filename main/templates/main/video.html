@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %} 
+
+
+{% block title %} Видео {% endblock%}
+
+
+{% block content %} <div>
+		
+		<div id="video">
+
+			<div class="video-container">
+				<video width="1825" height="700" controls id="myVideo">
+						<source src="{{ article.video.url }}" type="video/mp4">
+						Your browser does not support the video tag.
+				</video>
+				<button class="play-button" id="playButton">▶</button>
+		</div>
+			
+			
+			<h2 id="color">{{ article.title}}</h2>
+
+			<div>
+				<a href="{% url 'author' id=user_id %}">{{ username }}</a> - {{user_video_count}} 
+				<p>
+					Просмотры: {{ article.views }}
+				</p>
+			</div>
+		
+	</div>
+</div> {% endblock%}
+
+

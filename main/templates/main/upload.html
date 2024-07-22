@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %} 
+
+
+{% block title %} Загрузочная {% endblock%}
+
+
+{% block content %} <div id="div">
+	<form method="post" action="/upload/" enctype="multipart/form-data" id="formId">
+		{% csrf_token %}
+		<label for="title">Введите название:</label>
+		<input type="text" name="title" id="title" placeholder="Название видео" minlength="3"><br><br>
+
+		<label for="photo">Загрузите превью:</label>
+		<p>допустимые расширения: (jpg, png, jpeg, ico, raw)</p>
+		<input type="file" id="photo" name="photo" accept="image/*"><br><br>
+		<label for="video">Загрузите видео:</label>
+		<p>допустимые расширения: (mp4, avi, mov)</p>
+		<input type="file" id="video" name="video" accept="video/*"><br><br>
+		<button type="submit">Добавить видео</button>
+	</form>
+</div> {% endblock%}
